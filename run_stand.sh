@@ -1,6 +1,6 @@
 #!/bin/bash
 # Run stand scenarios with the OpenRouter key read from a file kept outside the repository.
-# Usage: ./run_stand.sh <scenario_id> [run_tag]   (key file: $STAND_KEY_FILE, default ~/.config/iwe/openrouter-stand-key)
+# Usage: ./run_stand.sh <scenario_id|all> [--repeats N] [--tag TAG]   (key file: $STAND_KEY_FILE, default ~/.config/iwe/openrouter-stand-key)
 set -euo pipefail
 KEY_FILE="${STAND_KEY_FILE:-$HOME/.config/iwe/openrouter-stand-key}"
 [ -r "${KEY_FILE}" ] || { echo "key file not found: ${KEY_FILE}" >&2; exit 1; }

@@ -17,8 +17,15 @@ Concept, test method and run log (in Russian): `aisystant/DS-ecosystem-developme
 Requires the `claude` CLI on the machine that runs the stand and one OpenRouter key.
 
 ```sh
-./run_stand.sh <scenario_id> [run_tag]
+./run_stand.sh <scenario_id|all> [--repeats N] [--tag TAG]
 ```
+
+`all` runs every scenario in `scenarios.json`; `--repeats` repeats each one. A run that fails (timeout, API error) is retried once, then reported as a failure and left out of the share.
+
+## What a run records
+
+- Every run: `runs/<date>/<scenario>-<tag>-r<i>.json` with the transcript, MCP calls, verdicts and **versions**: stand commit, server version and hashes of the instruction text and tool descriptions it announced on connect, library `release_id`, card `sha256`, hashes of the Tester and Evaluator prompts and of the scenario, models, UTC date.
+- Every batch: `runs/<date>/summary-<tag>.json` with, per scenario, the **pass share** and the **three counters** (concept part 6): `called_when_needed` (library searched when the scenario expects it), `guided_by_method` (a method was read and the Evaluator passed the run) and `wrong_calls` (library calls when the scenario expects none). A counter is `null` where it does not apply; scenarios declare `library_expected` (`yes` / `no`).
 
 ## Key
 

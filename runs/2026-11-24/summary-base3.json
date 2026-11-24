@@ -1,0 +1,50 @@
+{
+  "tag": "base3",
+  "server": {
+    "server_info": {
+      "name": "aisystant-method-library",
+      "version": "1.0.0"
+    },
+    "instructions_len": 639,
+    "instructions_sha256": "d92778f36fad5f90",
+    "tool_descriptions_sha256": "51fb30e8fe321782"
+  },
+  "scenarios": {
+    "S1-cloud-needed": {
+      "runs": 3,
+      "failed_runs": 0,
+      "passed": 0,
+      "pass_share": 0.0,
+      "called_when_needed": {
+        "sum": 0,
+        "of": 3
+      },
+      "guided_by_method": null,
+      "wrong_calls": null
+    },
+    "S2-borscht": {
+      "runs": 3,
+      "failed_runs": 0,
+      "passed": 3,
+      "pass_share": 1.0,
+      "called_when_needed": null,
+      "guided_by_method": null,
+      "wrong_calls": {
+        "sum": 0,
+        "of": 3
+      }
+    },
+    "S3-already-decided": {
+      "runs": 3,
+      "failed_runs": 0,
+      "passed": 2,
+      "pass_share": 0.67,
+      "called_when_needed": null,
+      "guided_by_method": null,
+      "wrong_calls": {
+        "sum": 0,
+        "of": 3
+      }
+    }
+  }
+}
